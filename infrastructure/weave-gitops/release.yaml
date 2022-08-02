@@ -34,5 +34,5 @@ spec:
       hosts:
       - host: localhost
         paths:
-        - path: /weave
+        - path: /weave(/|$)(.*)
           pathType: ImplementationSpecific
