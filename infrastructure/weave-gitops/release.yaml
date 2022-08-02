@@ -19,7 +19,10 @@ spec:
   # https://github.com/weaveworks/weave-gitops/blob/v0.9.1/charts/gitops-server/values.yaml
   values:
     adminUser:
-      create: false
+      create: true
+      username: admin
+      # htpasswd -bnBC 10 "" 'password' | tr -d ':\n' | sed 's/$2y/$2a/'
+      passwordHash: $2a$10$C.DJIZygnXCtKj0LCJAxz.Fxt/gNqL3AhlEUFRFxNBjxg1qY82cqe
     metrics:
       enabled: true
     ingress:
