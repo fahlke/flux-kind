@@ -20,8 +20,9 @@ spec:
   values:
     additionalArgs:
     ## https://github.com/weaveworks/weave-gitops/blob/main/cmd/gitops-server/cmd/cmd.go#L84
-    #- "--path=/weave"
-    - "--dev-mode"
+    - "--path=http://localhost/weave"
+    - "--dev-mode=true"
+    - "--dev-user=alex"
     adminUser:
       create: true
       username: admin
