@@ -21,13 +21,14 @@ spec:
     additionalArgs:
     ## https://github.com/weaveworks/weave-gitops/blob/main/cmd/gitops-server/cmd/cmd.go#L84
     - "--path=http://localhost/weave"
-    - "--dev-mode=true"
-    - "--dev-user=alex"
-    adminUser:
-      create: true
-      username: admin
-      # htpasswd -bnBC 10 "" 'password' | tr -d ':\n' | sed 's/$2y/$2a/'
-      passwordHash: $2a$10$C.DJIZygnXCtKj0LCJAxz.Fxt/gNqL3AhlEUFRFxNBjxg1qY82cqe
+    envVars:
+    - name: WEAVE_GITOPS_AUTH_ENABLED
+      value: "false"
+    #adminUser:
+    #  create: true
+    #  username: admin
+    #  # htpasswd -bnBC 10 "" 'password' | tr -d ':\n' | sed 's/$2y/$2a/'
+    #  passwordHash: $2a$10$C.DJIZygnXCtKj0LCJAxz.Fxt/gNqL3AhlEUFRFxNBjxg1qY82cqe
     metrics:
       enabled: true
     ingress:
