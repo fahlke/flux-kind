@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: landingpage
+data:
+  Caddyfile: |
+    # https://caddyserver.com/docs/caddyfile
+    :80 {
+    	root * /var/www/html
+    	file_server
+    }
+  index.html: |
+    <html>
+      <head>
+        <title>Landingpage</title>
+      </head>
+      <style>
+        body {
+          color: #000;
+          background: #fff;
+          font: 100% system-ui;
+        }
+
+        a {
+          color: #000;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          body {
+            color: #a9f546;
+            background: #121212;
+          }
+          body a {
+            color: #a9f546;
+          }
+
+          a:link, a:visited {
+            text-decoration: none;
+            cursor: auto;
+            color: #a9f546;
+          }
+
+          a:hover {
+            text-decoration: none;
+            color: #f56c46;
+          }
+        }
+
+        h3 {
+          line-height: 0.5em;
+        }
+
+        a:before{content:"→ "}
+
+        .center {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 1.5em;
+          line-height: 1.7;
+          padding: 10px;
+          #color: #a9f546;
+        }
+
+        .content {
+          padding-bottom: 1.2em;
+        }
+      </style>
+      <body>
+        <div class="center">
+          <div class="content">
+            <h3>Observability</h3>
+            <a href="http://localhost/grafana/dashboards">Grafana</a></br>
+            <a href="http://localhost/prometheus">Prometheus</a></br>
+            <a href="http://localhost/alertmanager">Alertmanager</a></br>
+            <a href="http://localhost/jaeger">Jaeger</a></br>
+          </div>
+          <div class="content">
+            <h3>Apps</h3>
+            x
+          </div>
+        </div>
+      </body>
+    <html>

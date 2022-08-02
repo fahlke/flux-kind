@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: landingpage
+spec:
+  selector:
+    matchLabels:
+      app: landingpage
+  template:
+    metadata:
+      labels:
+        app: landingpage
+    spec:
+      containers:
+      - name: landingpage
+        image: caddy:2.5.2-alpine
+        resources:
+          requests:
+            memory: "16Mi"
+          limits:
+            memory: "16Mi"
+        ports:
+        - name: http
+          containerPort: 80
+        volumeMounts:
+        - name: config
+          mountPath: /etc/caddy/Caddyfile
+          subPath: Caddyfile
+          readOnly: true
+        - name: config
+          mountPath: /var/www/html/index.html
+          subPath: index.html
+          readOnly: true
+      volumes:
+      - name: config
+        configMap:
+          name: landingpage
+          items:
+          - key: Caddyfile
+            path: Caddyfile
+          - key: index.html
+            path: index.html
