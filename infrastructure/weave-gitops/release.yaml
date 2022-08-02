@@ -18,9 +18,6 @@ spec:
   # Default values
   # https://github.com/weaveworks/weave-gitops/blob/v0.9.1/charts/gitops-server/values.yaml
   values:
-    additionalArgs:
-    ## https://github.com/weaveworks/weave-gitops/blob/main/cmd/gitops-server/cmd/cmd.go#L84
-    - "--path=http://localhost/weave"
     adminUser:
       create: true
       username: admin
@@ -30,8 +27,9 @@ spec:
       enabled: true
     ingress:
       enabled: true
-      #annotations:
-      #  konghq.com/strip-path: "true"
+      annotations:
+        konghq.com/preserve-host: "false"
+        konghq.com/strip-path: "true"
       className: kong
       hosts:
       - host: localhost
