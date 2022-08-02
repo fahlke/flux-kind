@@ -18,9 +18,10 @@ spec:
   # Default values
   # https://github.com/weaveworks/weave-gitops/blob/v0.9.1/charts/gitops-server/values.yaml
   values:
-    #additionalArgs:
+    additionalArgs:
     ## https://github.com/weaveworks/weave-gitops/blob/main/cmd/gitops-server/cmd/cmd.go#L84
     #- "--path=/weave"
+    - "--dev-mode"
     adminUser:
       create: true
       username: admin
