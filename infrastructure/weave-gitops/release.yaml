@@ -8,7 +8,7 @@ spec:
       chart: weave-gitops
       sourceRef:
         kind: HelmRepository
-        name: weaveworks-gitops
+        name: weave-gitops
         namespace: flux-system
       version: 2.2.5
   interval: 1m0s
