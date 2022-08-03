@@ -18,7 +18,6 @@ spec:
   # Default values
   # https://github.com/weaveworks/weave-gitops/blob/v0.9.1/charts/gitops-server/values.yaml
   values:
-    logLevel: debug
     adminUser:
       create: true
       username: admin
@@ -29,11 +28,11 @@ spec:
     ingress:
       enabled: true
       annotations:
-        konghq.com/preserve-host: "false"
+        konghq.com/preserve-host: "true"
         konghq.com/strip-path: "true"
       className: kong
       hosts:
       - host: localhost
         paths:
-        - path: /weave
+        - path: /weave/*
           pathType: ImplementationSpecific
