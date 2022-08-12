@@ -1,8 +1,22 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+- ../clusters/kind-kind/flux-system
 - gatekeeper-system.yaml
 - jaeger-system.yaml
 - keda-system.yaml
 - kong-system.yaml
 - prometheus-system.yaml
+
+# This will add the label to the flux-system namespace
+# for monitoring it with Prometheus
+patchesJson6902:
+- patch: |-
+    - op: add
+      path: /metadata/labels/prometheus
+      value:
+        yes
+  target:
+    kind: Namespace
+    name: flux-system
+    version: v1
