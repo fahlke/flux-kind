@@ -6,5 +6,4 @@ resources:
 - keda.yaml
 - kong.yaml
 - metrics-server.yaml
-- prometheus.yaml
 - weave-gitops.yaml
