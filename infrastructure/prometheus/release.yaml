@@ -90,6 +90,8 @@ spec:
         auth.anonymous:
           enabled: true
           org_role: Viewer
+        log.console:
+          format: json
     # disable scraping the controller manager
     kubeControllerManager:
       enabled: false
