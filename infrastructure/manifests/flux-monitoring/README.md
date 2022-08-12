@@ -1,0 +1,10 @@
+# flux-monitoring
+
+## About
+
+This will install the PodMonitors and the dashboards required to mnonitor Flux. 
+
+## Original Sources
+
+- [Monitoring with Prometheus](https://fluxcd.io/docs/guides/monitoring/)
+- [monitoring-config](https://github.com/fluxcd/flux2/tree/main/manifests/monitoring/monitoring-config)
