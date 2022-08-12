@@ -14,8 +14,11 @@ spec:
       version: 39.1.0
   interval: 1h0m0s
   install:
+    crds: Create
     remediation:
       retries: 3
+  upgrade:
+    crds: CreateReplace
   # Default values
   # https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml
   values:
@@ -34,11 +37,24 @@ spec:
     # configure prometheus
     prometheus:
       prometheusSpec:
+        retention: 24h
         routePrefix: /prometheus
         podMonitorSelectorNilUsesHelmValues: false
-        ruleSelectorNilUsesHelmValues: false
+        podMonitorNamespaceSelector:
+          any: true
         serviceMonitorSelectorNilUsesHelmValues: false
+        serviceMonitorNamespaceSelector:
+          any: true
         probeSelectorNilUsesHelmValues: false
+        probeNamespaceSelector:
+          any: true
+        ruleSelectorNilUsesHelmValues: false
+        ruleNamespaceSelector:
+          any: true
+        resources:
+          requests:
+            cpu: 1000m
+            memory: 250Mi
       ingress:
         enabled: true
         ingressClassName: kong
