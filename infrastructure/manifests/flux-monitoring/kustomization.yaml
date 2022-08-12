@@ -6,8 +6,8 @@ resources:
 configMapGenerator:
 - name: flux-grafana-dashboards
   files:
-  - dashboards/control-plane.json
-  - dashboards/cluster.json
+  - dashboards/flux-control-plane.json
+  - dashboards/flux-cluster.json
   options:
     labels:
       grafana_dashboard: "1"
