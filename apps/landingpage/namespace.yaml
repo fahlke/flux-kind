@@ -3,4 +3,5 @@ kind: Namespace
 metadata:
   labels:
     kubernetes.io/metadata.name: ops-tools
+    prometheus: "yes"
   name: ops-tools

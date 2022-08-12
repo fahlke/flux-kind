@@ -3,4 +3,5 @@ kind: Namespace
 metadata:
   labels:
     kubernetes.io/metadata.name: gatekeeper-system
+    prometheus: "yes"
   name: gatekeeper-system

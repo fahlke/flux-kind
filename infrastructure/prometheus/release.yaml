@@ -41,16 +41,20 @@ spec:
         routePrefix: /prometheus
         podMonitorSelectorNilUsesHelmValues: false
         podMonitorNamespaceSelector:
-          any: true
+          matchLabels:
+            prometheus: "yes"
         serviceMonitorSelectorNilUsesHelmValues: false
         serviceMonitorNamespaceSelector:
-          any: true
+          matchLabels:
+            prometheus: "yes"
         probeSelectorNilUsesHelmValues: false
         probeNamespaceSelector:
-          any: true
+          matchLabels:
+            prometheus: "yes"
         ruleSelectorNilUsesHelmValues: false
         ruleNamespaceSelector:
-          any: true
+          matchLabels:
+            prometheus: "yes"
         resources:
           requests:
             cpu: 1000m

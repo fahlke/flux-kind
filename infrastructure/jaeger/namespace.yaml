@@ -3,4 +3,5 @@ kind: Namespace
 metadata:
   labels:
     kubernetes.io/metadata.name: jaeger-system
+    prometheus: "yes"
   name: jaeger-system
