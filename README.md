@@ -1,13 +1,26 @@
+# flux-kind
+
+## Prerequisites
+
+```
 brew install podman
 brew install tilt-dev/tap/ctlptl
 brew install skaffold
 brew install kustomize
 brew install helm
 brew install fluxcd/tap/flux
+```
 
+## Stop collecting my data...
+
+```
 ctlptl analytics opt out
 skaffold config set --global collect-metrics false
+```
 
+## Start Kind Cluster
+
+```
 # this command manages the /var/run/docker.sock link
 sudo podman-mac-helper install
 
@@ -21,18 +34,23 @@ pushd hack >/dev/null
   ctlptl apply -f ctlptl.yaml
   skaffold run
 popd >/dev/null
+```
 
+## Install Flux and the toolchain
+
+```
 # create a personal access token https://github.com/settings/tokens
-export GITHUB_TOKEN='xxxxx'
+export GITHUB_TOKEN='xxxx'
 flux bootstrap github \
   --owner=fahlke \
   --repository=flux-kind \
   --path=clusters/kind-kind \
   --personal
+```
 
-flux reconcile source git flux-system
-flux reconcile kustomization infrastructure
+## Cleanup
 
-
+```
 podman machine stop
 podman machine rm --save-image --force
+```
