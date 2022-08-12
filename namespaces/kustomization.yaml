@@ -5,4 +5,4 @@ resources:
 - jaeger-system.yaml
 - keda-system.yaml
 - kong-system.yaml
-- metrics-system.yaml
+- prometheus-system.yaml
