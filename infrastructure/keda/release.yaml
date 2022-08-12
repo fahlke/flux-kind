@@ -11,7 +11,7 @@ spec:
         kind: HelmRepository
         name: keda
         namespace: flux-system
-      version: 2.7.2
+      version: 2.8.1
   interval: 1h0m0s
   install:
     crds: Create
@@ -20,7 +20,7 @@ spec:
   upgrade:
     crds: CreateReplace
   # Default values
-  # https://github.com/kedacore/charts/blob/v2.7.2/keda/values.yaml
+  # https://github.com/kedacore/charts/blob/v2.8.1/keda/values.yaml
   values:
     logging:
       operator:
