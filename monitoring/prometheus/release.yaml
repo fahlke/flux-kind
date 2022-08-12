@@ -11,7 +11,7 @@ spec:
         kind: HelmRepository
         name: prometheus
         namespace: flux-system
-      version: 39.1.0
+      version: 39.6.0
   interval: 1h0m0s
   install:
     crds: Create
@@ -20,7 +20,7 @@ spec:
   upgrade:
     crds: CreateReplace
   # Default values
-  # https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml
+  # https://github.com/prometheus-community/helm-charts/blob/kube-prometheus-stack-39.6.0/charts/kube-prometheus-stack/values.yaml
   values:
     # configure the alertmanager
     alertmanager:

@@ -11,7 +11,7 @@ spec:
         kind: HelmRepository
         name: jaeger
         namespace: flux-system
-      version: 0.57.1
+      version: 0.58.0
   interval: 1h0m0s
   install:
     crds: Create
@@ -20,7 +20,7 @@ spec:
   upgrade:
     crds: CreateReplace
   # Default values
-  # https://github.com/jaegertracing/helm-charts/blob/jaeger-0.57.1/charts/jaeger/values.yaml
+  # https://github.com/jaegertracing/helm-charts/blob/jaeger-0.58.0/charts/jaeger/values.yaml
   values:
     provisionDataStore:
       cassandra: false

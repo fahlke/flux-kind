@@ -11,7 +11,7 @@ spec:
         kind: HelmRepository
         name: prometheus
         namespace: flux-system
-      version: 6.0.0
+      version: 7.0.0
   interval: 1h0m0s
   install:
     crds: Create
@@ -20,5 +20,5 @@ spec:
   upgrade:
     crds: CreateReplace
   # Default values
-  # https://github.com/prometheus-community/helm-charts/blob/prometheus-blackbox-exporter-6.0.0/charts/prometheus-blackbox-exporter/values.yaml
+  # https://github.com/prometheus-community/helm-charts/blob/prometheus-blackbox-exporter-7.0.0/charts/prometheus-blackbox-exporter/values.yaml
   #values:
