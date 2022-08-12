@@ -14,8 +14,11 @@ spec:
       version: 3.8.2
   interval: 1h0m0s
   install:
+    crds: Create
     remediation:
       retries: 3
+  upgrade:
+    crds: CreateReplace
   # Default values
   # https://github.com/kubernetes-sigs/metrics-server/blob/metrics-server-helm-chart-3.8.2/charts/metrics-server/values.yaml
   values:

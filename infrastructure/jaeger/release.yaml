@@ -14,8 +14,11 @@ spec:
       version: 0.57.1
   interval: 1h0m0s
   install:
+    crds: Create
     remediation:
       retries: 3
+  upgrade:
+    crds: CreateReplace
   # Default values
   # https://github.com/jaegertracing/helm-charts/blob/jaeger-0.57.1/charts/jaeger/values.yaml
   values:
