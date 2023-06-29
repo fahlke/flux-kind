@@ -27,14 +27,11 @@ spec:
         format: json
       webhooks:
         format: json
-    metricsServer:
-      dnsPolicy: ClusterFirstWithHostNet
-      useHostNetwork: true
     prometheus:
-      metricServer:
-        enabled: true
-        serviceMonitor:
-          enabled: true
+      #metricServer:
+      #  enabled: true
+      #  serviceMonitor:
+      #    enabled: true
       operator:
         enabled: true
         serviceMonitor:
