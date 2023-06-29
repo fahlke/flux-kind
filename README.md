@@ -42,9 +42,10 @@ popd >/dev/null
 # create a personal access token https://github.com/settings/tokens
 export GITHUB_TOKEN='xxxx'
 flux bootstrap github \
-  --owner=fahlke \
-  --repository=flux-kind \
-  --path=clusters/kind-kind \
+  --owner      "fahlke" \
+  --repository "flux-kind" \
+  --path       "clusters/kind-kind" \
+  --components "source-controller,kustomize-controller,helm-controller" \
   --personal
 ```
 
