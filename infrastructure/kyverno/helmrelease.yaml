@@ -1,0 +1,48 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kyverno
+spec:
+  releaseName: kyverno
+  chart:
+    spec:
+      chart: kyverno
+      sourceRef:
+        kind: HelmRepository
+        name: kyverno
+        namespace: kyverno
+      version: v3.0.0
+  interval: 1h0m0s
+  install:
+    crds: Create
+    remediation:
+      retries: 3
+  upgrade:
+    crds: CreateReplace
+  # https://github.com/kyverno/kyverno/blob/kyverno-policies-chart-3.0.0/charts/kyverno/values.yaml
+  values:
+    grafana:
+      enabled: true
+
+    features:
+      logging:
+        format: json
+
+    admissionController:
+      serviceMonitor:
+        enabled: true
+
+    backgroundController:
+      serviceMonitor:
+        enabled: true
+
+    cleanupController:
+      serviceMonitor:
+        enabled: true
+
+    reportsController:
+      serviceMonitor:
+        enabled: true
+
+    webhooksCleanup:
+      enabled: true
