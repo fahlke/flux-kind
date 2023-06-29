@@ -94,6 +94,14 @@ spec:
         log.console:
           format: json
 
-    # disable scraping kube-proxy
     kubeProxy:
+      enabled: false
+
+    kubeControllerManager:
+      enabled: false
+
+    kubeEtcd:
+      enabled: false
+
+    kubeScheduler:
       enabled: false
