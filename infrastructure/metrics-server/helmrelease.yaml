@@ -19,10 +19,11 @@ spec:
       retries: 3
   upgrade:
     crds: CreateReplace
-  # Default values
   # https://github.com/kubernetes-sigs/metrics-server/blob/metrics-server-helm-chart-3.10.0/charts/metrics-server/values.yaml
   values:
-    hostNetwork:
+    metrics:
+      enabled: true
+    serviceMonitor:
       enabled: true
     args:
     - "--kubelet-insecure-tls"
