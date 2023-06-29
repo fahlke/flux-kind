@@ -40,19 +40,19 @@ spec:
         podMonitorSelectorNilUsesHelmValues: false
         podMonitorNamespaceSelector:
           matchLabels:
-            prometheus: "yes"
+            prometheus.io/namespace.enabled: "yes"
         serviceMonitorSelectorNilUsesHelmValues: false
         serviceMonitorNamespaceSelector:
           matchLabels:
-            prometheus: "yes"
+            prometheus.io/namespace.enabled: "yes"
         probeSelectorNilUsesHelmValues: false
         probeNamespaceSelector:
           matchLabels:
-            prometheus: "yes"
+            prometheus.io/namespace.enabled: "yes"
         ruleSelectorNilUsesHelmValues: false
         ruleNamespaceSelector:
           matchLabels:
-            prometheus: "yes"
+            prometheus.io/namespace.enabled: "yes"
         resources:
           requests:
             cpu: 1000m
