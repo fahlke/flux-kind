@@ -2,7 +2,7 @@
 
 ## About
 
-This will install the PodMonitors and the dashboards required to mnonitor Flux. 
+This will install the PodMonitors and the dashboards required to monitor Flux. 
 
 ## Original Sources
 
