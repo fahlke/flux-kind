@@ -19,7 +19,6 @@ spec:
       retries: 3
   upgrade:
     crds: CreateReplace
-  # Default values
   # https://github.com/kedacore/charts/blob/v2.11.1/keda/values.yaml
   values:
     logging:
