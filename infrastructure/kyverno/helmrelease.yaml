@@ -39,9 +39,9 @@ spec:
         clusterRole:
           extraResources:
           - apiGroups:
-              - ''
+            - ""
             resources:
-              - Namespaces
+            - namespaces
 
     cleanupController:
       serviceMonitor:
