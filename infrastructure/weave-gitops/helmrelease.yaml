@@ -10,7 +10,7 @@ spec:
         kind: HelmRepository
         name: weave-gitops
         namespace: flux-system
-      version: 2.2.5
+      version: 4.0.24
   interval: 1m0s
   install:
     remediation:
