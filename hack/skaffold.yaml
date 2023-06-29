@@ -22,5 +22,3 @@ deploy:
         nodePort.enabled: true
         hostPort.enabled: true
         ipam.mode: cluster-pool
-        hubble.relay.enabled: true
-        hubble.ui.enabled: true
