@@ -35,6 +35,13 @@ spec:
     backgroundController:
       serviceMonitor:
         enabled: true
+      rbac:
+        clusterRole:
+          extraResources:
+          - apiGroups:
+              - ''
+            resources:
+              - Namespaces
 
     cleanupController:
       serviceMonitor:
