@@ -21,22 +21,22 @@ spec:
     crds: CreateReplace
   # https://github.com/prometheus-community/helm-charts/blob/kube-prometheus-stack-47.1.0/charts/kube-prometheus-stack/values.yaml
   values:
-    alertmanager:
-      alertmanagerSpec:
-        routePrefix: /alertmanager
-      ingress:
-        enabled: false
-        ingressClassName: kong
-        hosts:
-        - localhost
-        pathType: ImplementationSpecific
-        paths:
-        - /alertmanager(/|$)(.*)
+    #alertmanager:
+    #  alertmanagerSpec:
+    #    routePrefix: /alertmanager
+    #  ingress:
+    #    enabled: false
+    #    ingressClassName: kong
+    #    hosts:
+    #    - localhost
+    #    pathType: ImplementationSpecific
+    #    paths:
+    #    - /alertmanager(/|$)(.*)
 
     prometheus:
       prometheusSpec:
         retention: 24h
-        routePrefix: /prometheus
+        #routePrefix: /prometheus
         podMonitorSelectorNilUsesHelmValues: false
         podMonitorNamespaceSelector:
           matchLabels:
@@ -57,32 +57,32 @@ spec:
           requests:
             cpu: 1000m
             memory: 250Mi
-      ingress:
-        enabled: false
-        ingressClassName: kong
-        hosts:
-        - localhost
-        pathType: ImplementationSpecific
-        paths:
-        - /prometheus(/|$)(.*)
+      #ingress:
+      #  enabled: true
+      #  ingressClassName: kong
+      #  hosts:
+      #  - localhost
+      #  pathType: ImplementationSpecific
+      #  paths:
+      #  - /prometheus(/|$)(.*)
 
     grafana:
       sidecar:
         dashboards:
           searchNamespace: ALL
       enabled: true
-      ingress:
-        enabled: false
-        ingressClassName: kong
-        hosts:
-        - localhost
-        pathType: ImplementationSpecific
-        path: /grafana(/|$)(.*)
+      #ingress:
+      #  enabled: false
+      #  ingressClassName: kong
+      #  hosts:
+      #  - localhost
+      #  pathType: ImplementationSpecific
+      #  path: /grafana(/|$)(.*)
       grafana.ini:
-        server:
-          domain: localhost
-          root_url: http://localhost/grafana
-          serve_from_sub_path: true
+        #server:
+        #  domain: localhost
+        #  root_url: http://localhost/grafana
+        #  serve_from_sub_path: true
         users:
           viewers_can_edit: true
         auth:
