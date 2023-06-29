@@ -28,7 +28,7 @@ podman machine init \
   --cpus 8 --memory 24576 --disk-size 100 \
   --timezone 'Etc/UTC' --rootful
 podman machine start
-export DOCKER_HOST="unix://$HOME/.local/share/containers/podman/machine/podman-machine-default/podman.sock"
+export DOCKER_HOST="unix://$HOME/.local/share/containers/podman/machine/podman.sock"
 
 pushd hack >/dev/null
   ctlptl apply -f ctlptl.yaml
