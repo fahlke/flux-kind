@@ -11,7 +11,7 @@ spec:
         kind: HelmRepository
         name: prometheus
         namespace: flux-system
-      version: 39.6.0
+      version: 47.1.0
   interval: 1h0m0s
   install:
     crds: Create
@@ -19,22 +19,20 @@ spec:
       retries: 3
   upgrade:
     crds: CreateReplace
-  # Default values
-  # https://github.com/prometheus-community/helm-charts/blob/kube-prometheus-stack-39.6.0/charts/kube-prometheus-stack/values.yaml
+  # https://github.com/prometheus-community/helm-charts/blob/kube-prometheus-stack-47.1.0/charts/kube-prometheus-stack/values.yaml
   values:
-    # configure the alertmanager
     alertmanager:
       alertmanagerSpec:
         routePrefix: /alertmanager
       ingress:
-        enabled: true
+        enabled: false
         ingressClassName: kong
         hosts:
         - localhost
         pathType: ImplementationSpecific
         paths:
         - /alertmanager(/|$)(.*)
-    # configure prometheus
+
     prometheus:
       prometheusSpec:
         retention: 24h
@@ -60,21 +58,21 @@ spec:
             cpu: 1000m
             memory: 250Mi
       ingress:
-        enabled: true
+        enabled: false
         ingressClassName: kong
         hosts:
         - localhost
         pathType: ImplementationSpecific
         paths:
         - /prometheus(/|$)(.*)
-    # configure grafana
+
     grafana:
       sidecar:
         dashboards:
           searchNamespace: ALL
       enabled: true
       ingress:
-        enabled: true
+        enabled: false
         ingressClassName: kong
         hosts:
         - localhost
@@ -95,15 +93,7 @@ spec:
           org_role: Viewer
         log.console:
           format: json
-    # disable scraping the controller manager
-    kubeControllerManager:
-      enabled: false
-    # disable scraping etcd
-    kubeEtcd:
-      enabled: false
+
     # disable scraping kube-proxy
     kubeProxy:
-      enabled: false
-    # disable scraping the scheduler
-    kubeScheduler:
       enabled: false
