@@ -6,7 +6,6 @@ metadata:
 spec:
   dependsOn:
   - name: namespaces
-  - name: linkerd
   interval: 10m0s
   sourceRef:
     kind: GitRepository
