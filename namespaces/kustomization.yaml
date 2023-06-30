@@ -6,3 +6,4 @@ resources:
 - keda.yaml
 - kyverno.yaml
 - emissary-system.yaml
+- linkerd.yaml

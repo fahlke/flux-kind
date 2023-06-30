@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: linkerd-crds
+spec:
+  releaseName: linkerd-crds
+  chart:
+    spec:
+      chart: linkerd-crds
+      sourceRef:
+        kind: HelmRepository
+        name: linkerd
+        namespace: linkerd
+      version: 1.6.1
+  interval: 1h0m0s
+  # https://github.com/linkerd/linkerd2/blob/stable-2.13.5/charts/linkerd-crds/values.yaml
+  #values:
