@@ -9,6 +9,7 @@ brew install skaffold
 brew install kustomize
 brew install helm
 brew install fluxcd/tap/flux
+brew install linkerd
 ```
 
 ## Stop collecting my data...
