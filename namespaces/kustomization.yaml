@@ -1,9 +1,13 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+commonAnnotations:
+  linkerd.io/inject: enabled
+
 resources:
 - prometheus.yaml
 - keda.yaml
 - kyverno.yaml
 - emissary-system.yaml
 - linkerd.yaml
+- cert-manager.yaml

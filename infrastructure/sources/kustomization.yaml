@@ -7,3 +7,4 @@ resources:
 - kyverno.yaml
 - emissary.yaml
 - linkerd.yaml
+- cert-manager.yaml
