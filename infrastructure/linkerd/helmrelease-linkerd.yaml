@@ -23,9 +23,7 @@ spec:
       logFormat: json
     networkValidator:
       logFormat: json
-    identityTrustAnchorsPEM: ca.crt
     identity:
+      externalCA: true
       issuer:
-        tls:
-          crtPEM: issuer.crt
-          keyPEM: issuer.key
+        scheme: kubernetes.io/tls
