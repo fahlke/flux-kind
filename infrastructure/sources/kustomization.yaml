@@ -5,3 +5,4 @@ resources:
 - metrics-server.yaml
 - weave-gitops.yaml
 - kyverno.yaml
+- emissary.yaml
