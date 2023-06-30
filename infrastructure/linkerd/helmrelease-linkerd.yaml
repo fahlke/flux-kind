@@ -1,0 +1,32 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: linkerd-control-plane
+spec:
+  releaseName: linkerd-control-plane
+  chart:
+    spec:
+      chart: linkerd-control-plane
+      sourceRef:
+        kind: HelmRepository
+        name: linkerd
+        namespace: linkerd
+      version: 1.12.5
+  interval: 1h0m0s
+  # https://github.com/linkerd/linkerd2/blob/stable-2.13.5/charts/linkerd-control-plane/values.yaml
+  values:
+    controllerLogFormat: json
+    priorityClassName: system-cluster-critical
+    proxy:
+      logFormat: json
+    proxyInit:
+      logFormat: json
+    networkValidator:
+      logFormat: json
+    #identity:
+    #  # -- If the linkerd-identity-trust-roots ConfigMap has already been created
+    #  externalCA: true
+    #identity:
+    #  issuer:
+    #    scheme: kubernetes.io/tls
+    #identityTrustAnchorsPEM: 
