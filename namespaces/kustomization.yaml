@@ -11,3 +11,12 @@ resources:
 - emissary-system.yaml
 - linkerd.yaml
 - cert-manager.yaml
+
+patches:
+- target:
+    kind: Namespace
+    name: default
+  patch: |-
+    - op: add
+      path: /spec/metadata/annotations/linkerd\.io/inject
+      value: enabled
