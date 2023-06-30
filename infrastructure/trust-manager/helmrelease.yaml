@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: trust-manager
+spec:
+  releaseName: trust-manager
+  chart:
+    spec:
+      chart: trust-manager
+      sourceRef:
+        kind: HelmRepository
+        name: cert-manager
+        namespace: cert-manager
+      version: v0.5.0
+  interval: 1h0m0s
+  # https://github.com/cert-manager/trust-manager/blob/v0.5.0/deploy/charts/trust-manager/values.yaml
+  #values:
+  #  global:
+  #    priorityClassName: system-cluster-critical
+  #    leaderElection:
+  #      namespace: cert-manager
+  #  installCRDs: true
+  #  namespace: cert-manager
+  #  prometheus:
+  #    enabled: true
+  #    servicemonitor:
+  #      enabled: true
