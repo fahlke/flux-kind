@@ -6,3 +6,6 @@ namespace: emissary-system
 # https://www.getambassador.io/docs/emissary/latest/topics/install/helm
 resources:
 - https://app.getambassador.io/yaml/emissary/3.7.0/emissary-crds.yaml
+
+patches:
+- path: deployment-patch.yaml
