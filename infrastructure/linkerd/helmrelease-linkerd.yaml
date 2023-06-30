@@ -23,10 +23,9 @@ spec:
       logFormat: json
     networkValidator:
       logFormat: json
-    #identity:
-    #  # -- If the linkerd-identity-trust-roots ConfigMap has already been created
-    #  externalCA: true
-    #identity:
-    #  issuer:
-    #    scheme: kubernetes.io/tls
-    #identityTrustAnchorsPEM: 
+    identityTrustAnchorsPEM: ca.crt
+    identity:
+      issuer:
+        tls:
+          crtPEM: issuer.crt
+          keyPEM: issuer.key
