@@ -5,10 +5,14 @@ commonAnnotations:
   linkerd.io/inject: enabled
 
 resources:
+# kind build-in namespaces
+- default.yaml
+- local-path-storage.yaml
+
+# additional namespaces
 - prometheus.yaml
 - keda.yaml
 - kyverno.yaml
 - emissary-system.yaml
 - linkerd.yaml
 - cert-manager.yaml
-- default.yaml
