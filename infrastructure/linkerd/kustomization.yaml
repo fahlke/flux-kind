@@ -4,3 +4,8 @@ namespace: linkerd
 resources:
 - helmrelease-crds.yaml
 - helmrelease-linkerd.yaml
+- bundle-linkerd-identity-trust-roots.yaml
+- certificate-linkerd-identity-issuer.yaml
+- certificate-linkerd-trust-anchor.yaml
+- clusterissuer-linkerd-self-signed-issuer.yaml
+- clusterissuer-linkerd-trust-anchor.yaml
