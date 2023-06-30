@@ -6,5 +6,3 @@ resources:
 - weave-gitops.yaml
 - kyverno.yaml
 - emissary.yaml
-- linkerd.yaml
-- cert-manager.yaml
