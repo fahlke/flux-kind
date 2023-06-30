@@ -5,4 +5,4 @@ resources:
 - prometheus.yaml
 - keda.yaml
 - kyverno.yaml
-- emissary.yaml
+- emissary-system.yaml
