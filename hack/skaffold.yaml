@@ -20,3 +20,4 @@ deploy:
         containerRuntime.integration: containerd
         operator.rollOutPods: true
         operator.replicas: 1
+        socketLB.hostNamespaceOnly: true
