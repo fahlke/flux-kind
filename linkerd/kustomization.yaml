@@ -5,6 +5,7 @@ resources:
 - helmrepository.yaml
 - helmrelease-crds.yaml
 - helmrelease-linkerd.yaml
+- helmrelease-linkerd-viz.yaml
 - bundle-linkerd-identity-trust-roots.yaml
 - certificate-linkerd-identity-issuer.yaml
 - certificate-linkerd-trust-anchor.yaml
