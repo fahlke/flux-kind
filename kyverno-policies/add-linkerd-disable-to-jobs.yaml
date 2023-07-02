@@ -9,14 +9,13 @@ spec:
       any:
       - resources:
           kinds:
-            - Job
-    preconditions:
-      any:
-        - key: "{{ request.object.metadata.ownerReferences || `[]` }}"
-          operator: Equals
-          value: []
+          - CronJob
     mutate:
       patchStrategicMerge:
-        metadata:
-          annotations:
-            linkerd.io/inject: disabled
+        spec:
+          jobTemplate:
+            spec:
+              template:
+                metadata:
+                  annotations:
+                    +(linkerd.io/inject): disabled
