@@ -28,3 +28,5 @@ spec:
       externalCA: true
       issuer:
         scheme: kubernetes.io/tls
+    podMonitor:
+      enabled: true

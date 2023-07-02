@@ -20,4 +20,5 @@ spec:
     prometheus:
       enabled: false
     grafana:
-      url: http://prometheus-grafana.prometheus.svc.cluster.local:3000
+      url: prometheus-grafana.prometheus.svc.cluster.local:3000
+    defaultLogFormat: json
