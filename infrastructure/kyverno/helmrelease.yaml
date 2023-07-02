@@ -31,6 +31,8 @@ spec:
     admissionController:
       serviceMonitor:
         enabled: true
+      podAnnotations:
+        linkerd.io/inject: disabled
 
     backgroundController:
       serviceMonitor:
@@ -42,14 +44,18 @@ spec:
             - ""
             resources:
             - namespaces
+      podAnnotations: {}
 
     cleanupController:
       serviceMonitor:
         enabled: true
+      podAnnotations:
+        linkerd.io/inject: disabled
 
     reportsController:
       serviceMonitor:
         enabled: true
+      podAnnotations: {}
 
     webhooksCleanup:
       enabled: true
