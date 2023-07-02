@@ -19,3 +19,5 @@ spec:
     prometheusUrl: http://prometheus-kube-prometheus-prometheus.prometheus.svc.cluster.local:9090
     prometheus:
       enabled: false
+    grafana:
+      url: http://prometheus-grafana.prometheus.svc.cluster.local:3000
