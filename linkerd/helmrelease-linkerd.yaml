@@ -30,3 +30,5 @@ spec:
         scheme: kubernetes.io/tls
     podMonitor:
       enabled: true
+    # By default, some namespaces are excluded.
+    # See: https://github.com/linkerd/linkerd2/blob/stable-2.13.5/charts/linkerd-control-plane/values.yaml#L357
