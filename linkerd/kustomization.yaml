@@ -16,7 +16,7 @@ resources:
 # ref: https://linkerd.io/2.13/tasks/grafana/#install-grafana
 # ref: https://grafana.com/orgs/linkerd/dashboards
 configMapGenerator:
-- name: linkerd-viz
+- name: linkerd-viz-dashboards
   namespace: linkerd-viz
   options:
     labels:
