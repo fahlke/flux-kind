@@ -15,4 +15,7 @@ spec:
       version: 30.8.5
   interval: 1h0m0s
   # https://github.com/linkerd/linkerd2/blob/stable-2.13.5/viz/charts/linkerd-viz/values.yaml
-  #values:
+  values:
+    prometheusUrl: http://prometheus.prometheus.svc.cluster.local:9090
+    prometheus:
+      enabled: false
