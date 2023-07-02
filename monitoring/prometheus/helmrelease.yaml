@@ -97,8 +97,21 @@ spec:
         # additional dashboards for Linkerd-Viz
         # ref: https://linkerd.io/2.13/tasks/grafana/#install-grafana
         # ref: https://grafana.com/orgs/linkerd/dashboards
+        dashboardProviders:
+          dashboardproviders.yaml:
+            apiVersion: 1
+            providers:
+            - name: 'linkerd-viz'
+              orgId: 1
+              folder: ''
+              type: file
+              disableDeletion: true
+              editable: true
+              options:
+                path: /var/lib/grafana/dashboards/linkerd-viz
+
         dashboards:
-          default:
+          linkerd-viz:
             # all these charts are hosted at https://grafana.com/grafana/dashboards/{id}
             top-line:
               gnetId: 15474
