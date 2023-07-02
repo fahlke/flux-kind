@@ -1,0 +1,22 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: add-linkerd-disable-to-jobs
+spec:
+  rules:
+    - name: add-linkerd-disable-to-jobs
+      match:
+        any:
+        - resources:
+            kinds:
+              - Job
+      preconditions:
+        any:
+          - key: "{{ request.object.metadata.ownerReferences || `[]` }}"
+            operator: Equals
+            value: []
+      mutate:
+        patchStrategicMerge:
+          metadata:
+            annotations:
+              +(linkerd.io/inject): disabled
