@@ -3,6 +3,7 @@ kind: ClusterPolicy
 metadata:
   name: add-default-annotations-to-all-namespaces
 spec:
+  mutateExistingOnPolicyUpdate: true
   rules:
   - name: add-default-annotations-to-all-namespaces
     match:
@@ -11,6 +12,9 @@ spec:
           kinds:
           - Namespace
     mutate:
+      targets:
+      - apiVersion: v1
+        kind: Namespace
       patchStrategicMerge:
         metadata:
           annotations:

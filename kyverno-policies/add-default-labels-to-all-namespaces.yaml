@@ -18,4 +18,4 @@ spec:
       patchStrategicMerge:
         metadata:
           labels:
-            prometheus.io/namespace.enabled: "yes"
+            +(prometheus.io/namespace.enabled): "yes"
