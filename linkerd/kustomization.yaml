@@ -22,21 +22,21 @@ configMapGenerator:
     labels:
       grafana_dashboard: "1"
   files:
-  - top-line=https://grafana.com/api/dashboards/15474/revisions/4/download
-  - health=https://grafana.com/api/dashboards/15486/revisions/3/download
-  - kubernetes=https://grafana.com/api/dashboards/15479/revisions/2/download
-  - namespace=https://grafana.com/api/dashboards/15478/revisions/3/download
-  - deployment=https://grafana.com/api/dashboards/15475/revisions/6/download
-  - pod=https://grafana.com/api/dashboards/15477/revisions/3/download
-  - service=https://grafana.com/api/dashboards/15480/revisions/3/download
-  - route=https://grafana.com/api/dashboards/15481/revisions/3/download
-  - authority=https://grafana.com/api/dashboards/15482/revisions/3/download
-  - cronjob=https://grafana.com/api/dashboards/15483/revisions/3/download
-  - job=https://grafana.com/api/dashboards/15487/revisions/3/download
-  - daemonset=https://grafana.com/api/dashboards/15484/revisions/3/download
-  - replicaset=https://grafana.com/api/dashboards/15491/revisions/3/download
-  - statefulset=https://grafana.com/api/dashboards/15493/revisions/3/download
-  - replicationcontroller=https://grafana.com/api/dashboards/15492/revisions/4/download
-  - prometheus=https://grafana.com/api/dashboards/15489/revisions/2/download
-  - prometheus-benchmark=https://grafana.com/api/dashboards/15490/revisions/2/download
-  - multicluster=https://grafana.com/api/dashboards/15488/revisions/3/download
+  - top-line.json=https://grafana.com/api/dashboards/15474/revisions/4/download
+  - health.json=https://grafana.com/api/dashboards/15486/revisions/3/download
+  - kubernetes.json=https://grafana.com/api/dashboards/15479/revisions/2/download
+  - namespace.json=https://grafana.com/api/dashboards/15478/revisions/3/download
+  - deployment.json=https://grafana.com/api/dashboards/15475/revisions/6/download
+  - pod.json=https://grafana.com/api/dashboards/15477/revisions/3/download
+  - service.json=https://grafana.com/api/dashboards/15480/revisions/3/download
+  - route.json=https://grafana.com/api/dashboards/15481/revisions/3/download
+  - authority.json=https://grafana.com/api/dashboards/15482/revisions/3/download
+  - cronjob.json=https://grafana.com/api/dashboards/15483/revisions/3/download
+  - job.json=https://grafana.com/api/dashboards/15487/revisions/3/download
+  - daemonset.json=https://grafana.com/api/dashboards/15484/revisions/3/download
+  - replicaset.json=https://grafana.com/api/dashboards/15491/revisions/3/download
+  - statefulset.json=https://grafana.com/api/dashboards/15493/revisions/3/download
+  - replicationcontroller.json=https://grafana.com/api/dashboards/15492/revisions/4/download
+  - prometheus.json=https://grafana.com/api/dashboards/15489/revisions/2/download
+  - prometheus-benchmark.json=https://grafana.com/api/dashboards/15490/revisions/2/download
+  - multicluster.json=https://grafana.com/api/dashboards/15488/revisions/3/download
