@@ -65,6 +65,15 @@ spec:
       #  pathType: ImplementationSpecific
       #  paths:
       #  - /prometheus(/|$)(.*)
+      thanosService:
+        enabled: true
+      thanosServiceMonitor:
+        enabled: true
+      # https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#thanosspec
+      thanos: {}
+
+    thanosRuler:
+      enabled: true
 
     grafana:
       sidecar:
