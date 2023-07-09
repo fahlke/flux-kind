@@ -10,3 +10,4 @@ resources:
 - linkerd-viz.yaml
 - cert-manager.yaml
 - minio.yaml
+- thanos.yaml
