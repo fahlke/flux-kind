@@ -3,3 +3,4 @@ kind: Kustomization
 namespace: minio
 resources:
 - helmrelease.yaml
+- helmrepository.yaml
