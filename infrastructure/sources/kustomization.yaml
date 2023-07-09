@@ -6,3 +6,4 @@ resources:
 - weave-gitops.yaml
 - kyverno.yaml
 - emissary.yaml
+- minio

@@ -15,4 +15,4 @@ spec:
       version: 1.6.1
   interval: 1h0m0s
   # https://github.com/linkerd/linkerd2/blob/stable-2.13.5/charts/linkerd-crds/values.yaml
-  #values:
+  values: {}

@@ -20,4 +20,4 @@ spec:
   upgrade:
     crds: CreateReplace
   # https://github.com/prometheus-community/helm-charts/blob/prometheus-blackbox-exporter-7.12.0/charts/prometheus-blackbox-exporter/values.yaml
-  #values:
+  values: {}
