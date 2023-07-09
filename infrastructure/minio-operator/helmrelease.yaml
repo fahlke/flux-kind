@@ -15,5 +15,5 @@ spec:
   interval: 1h0m0s
   # https://github.com/minio/operator/blob/v5.0.6/helm/operator/values.yaml
   values:
-operator:
-  replicaCount: 1
+    operator:
+      replicaCount: 1
