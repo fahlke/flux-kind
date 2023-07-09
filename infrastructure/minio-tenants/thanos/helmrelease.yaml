@@ -26,8 +26,8 @@ spec:
       pools:
       - servers: 1
         name: thanos-pool-0
-        volumesPerServer: 4
-        size: 1Gi
+        volumesPerServer: 1
+        size: 10Gi
         storageClassName: standard
         annotations:
           linkerd.io/inject: disabled
