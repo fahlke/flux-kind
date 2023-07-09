@@ -3,6 +3,7 @@ kind: ClusterPolicy
 metadata:
   name: add-default-labels-to-all-namespaces
 spec:
+  validationFailureAction: enforce
   mutateExistingOnPolicyUpdate: true
   rules:
   - name: add-default-labels-to-all-namespaces

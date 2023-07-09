@@ -3,6 +3,7 @@ kind: ClusterPolicy
 metadata:
   name: do-not-inject-linkerd-jobs-and-cronjobs
 spec:
+  validationFailureAction: enforce
   mutateExistingOnPolicyUpdate: true
   rules:
   - name: do-not-inject-linkerd-jobs
