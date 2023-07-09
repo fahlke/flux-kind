@@ -12,6 +12,9 @@ spec:
           kinds:
           - Job
     mutate:
+      targets:
+      - apiVersion: v1
+        kind: Job
       patchStrategicMerge:
         spec:
           template:
@@ -25,6 +28,9 @@ spec:
           kinds:
           - CronJob
     mutate:
+      targets:
+      - apiVersion: v1
+        kind: CronJob
       patchStrategicMerge:
         spec:
           jobTemplate:
