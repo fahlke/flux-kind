@@ -17,20 +17,18 @@ spec:
   values:
     secrets:
       name: thanos-kube-prometheus-stack
-      accessKey: thanos
-      secretKey: thanos
+      accessKey: thanos-kube-prometheus-stack
+      secretKey: thanos-kube-prometheus-stack
     tenant:
       name: thanos
       configuration:
         name: thanos-kube-prometheus-stack
       pools:
       - servers: 1
-        name: thanos-pool-0
-        volumesPerServer: 1
-        size: 10Gi
+        name: thanos-kube-prometheus-stack-pool
+        volumesPerServer: 3
+        size: 2Gi
         storageClassName: standard
-        annotations:
-          linkerd.io/inject: disabled
       metrics:
         enabled: true
       buckets:
