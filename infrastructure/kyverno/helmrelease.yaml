@@ -42,6 +42,8 @@ spec:
             - ""
             resources:
             - namespaces
+            - cronjobs
+            - jobs
 
     cleanupController:
       serviceMonitor:
