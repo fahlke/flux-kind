@@ -9,4 +9,4 @@ resources:
 - linkerd.yaml
 - linkerd-viz.yaml
 - cert-manager.yaml
-- minio
+- minio.yaml
