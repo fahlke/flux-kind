@@ -2,7 +2,12 @@ apiVersion: skaffold/v2beta28
 kind: Config
 metadata:
   name: kind
+
+
 deploy:
+  kustomize:
+    paths:
+    - k8s/base/local-path-provisioner
   helm:
     releases:
     - name: cilium
