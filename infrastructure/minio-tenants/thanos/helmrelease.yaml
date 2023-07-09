@@ -29,6 +29,8 @@ spec:
         volumesPerServer: 4
         size: 1Gi
         storageClassName: standard
+        annotations:
+          linkerd.io/inject: disabled
       metrics:
         enabled: true
       buckets:
