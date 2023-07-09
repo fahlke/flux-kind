@@ -70,7 +70,13 @@ spec:
       thanosServiceMonitor:
         enabled: true
       # https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#thanosspec
-      thanos: {}
+      # https://github.com/prometheus-community/helm-charts/blob/kube-prometheus-stack-47.1.0/charts/kube-prometheus-stack/values.yaml#L3329
+      thanos:
+        additionalArgs:
+          - name: shipper.upload-compacted
+        objectStorageConfig:
+          name: thanos-objstore-config
+          key: thanos-storage-config.yaml
 
     thanosRuler:
       enabled: true
