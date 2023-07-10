@@ -21,14 +21,6 @@ spec:
     crds: CreateReplace
   # https://github.com/prometheus-community/helm-charts/blob/kube-prometheus-stack-47.1.0/charts/kube-prometheus-stack/values.yaml
   values:
-    prometheusOperator:
-      admissionWebhooks:
-        annotations:
-          linkerd.io/inject: disabled
-        #patch:
-        #  annotations:
-        #    linkerd.io/inject: disabled
-
     thanosRuler:
       enabled: true
 
