@@ -3,11 +3,8 @@ kind: Kustomization
 
 namespace: prometheus
 
-#configurations:
-#- kustomizeconfig.yaml
-
-generatorOptions:
-  disableNameSuffixHash: true
+configurations:
+- kustomizeconfig.yaml
 
 resources:
 - helmrelease.yaml

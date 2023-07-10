@@ -32,8 +32,11 @@ spec:
     #    pathType: ImplementationSpecific
     #    paths:
     #    - /alertmanager(/|$)(.*)
-
     prometheus:
+      thanosService:
+        enabled: true
+      thanosServiceMonitor:
+        enabled: true
       prometheusSpec:
         retention: 24h
         #routePrefix: /prometheus
@@ -57,6 +60,35 @@ spec:
           requests:
             cpu: 1000m
             memory: 250Mi
+        storageSpec:
+          volumeClaimTemplate:
+            spec:
+              storageClassName: standard
+              accessModes: ["ReadWriteOnce"]
+              resources:
+                requests:
+                  storage: 10Gi
+        disableCompaction: true
+        ## Thanos configuration allows configuring various aspects of a Prometheus server in a Thanos environment.
+        ## This section is experimental, it may change significantly without deprecation notice in any release.
+        ## This is experimental and may change significantly without backward compatibility in any release.
+        ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#thanosspec
+        ##
+        #### thanos:
+        ####   secretProviderClass:
+        ####     provider: gcp
+        ####     parameters:
+        ####       secrets: |
+        ####         - resourceName: "projects/$PROJECT_ID/secrets/testsecret/versions/latest"
+        ####           fileName: "objstore.yaml"
+        ####   objectStorageConfigFile: /var/secrets/object-store.yaml
+        thanos:
+          additionalArgs:
+          - name: shipper.upload-compacted
+          objectStorageConfig:
+            name: thanos-objstore-config
+            key: thanos-storage-config.yaml
+
       #ingress:
       #  enabled: true
       #  ingressClassName: kong
@@ -71,12 +103,6 @@ spec:
       ######?????  enabled: true
       # https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#thanosspec
       # https://github.com/prometheus-community/helm-charts/blob/kube-prometheus-stack-47.1.0/charts/kube-prometheus-stack/values.yaml#L3329
-      thanos:
-        additionalArgs:
-        - name: shipper.upload-compacted
-        objectStorageConfig:
-          name: thanos-objstore-config
-          key: thanos-storage-config.yaml
 
     thanosRuler:
       enabled: true
