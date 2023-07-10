@@ -5,4 +5,4 @@ config:
   access_key: thanos-kube-prometheus-stack
   secret_key: thanos-kube-prometheus-stack
   # TLS disabled to make it easier in a dev environment with Minio
-  insecure: true
+  http_config.insecure_skip_verify: true
