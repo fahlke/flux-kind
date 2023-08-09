@@ -108,8 +108,8 @@ spec:
       #  path: /grafana(/|$)(.*)
       grafana.ini:
         server:
-          root_url: '%(protocol)s://%(domain)s:/grafana/'
-          serve_from_sub_path: true
+          root_url: '%(protocol)s://%(domain)s:/'
+          serve_from_sub_path: false
         users:
           viewers_can_edit: true
         auth:
