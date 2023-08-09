@@ -13,7 +13,7 @@ configMapGenerator:
   options:
     labels:
       grafana_dashboard: "1"
-  # until the PR (https://github.com/linkerd/linkerd2/pull/11017) is merged, the forked dashboards are used
+  # until the PR (https://github.com/linkerd/linkerd2/pull/11017) is merged, the dashboards from the main branch are used
   files:
   - authority.json=https://raw.githubusercontent.com/linkerd/linkerd2/main/grafana/dashboards/authority.json
   - cronjob.json=https://raw.githubusercontent.com/linkerd/linkerd2/main/grafana/dashboards/cronjob.json

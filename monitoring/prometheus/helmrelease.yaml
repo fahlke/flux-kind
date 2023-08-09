@@ -107,10 +107,9 @@ spec:
       #  pathType: ImplementationSpecific
       #  path: /grafana(/|$)(.*)
       grafana.ini:
-        #server:
-        #  domain: localhost
-        #  root_url: http://localhost/grafana
-        #  serve_from_sub_path: true
+        server:
+          root_url: '%(protocol)s://%(domain)s:/grafana/'
+          serve_from_sub_path: true
         users:
           viewers_can_edit: true
         auth:
