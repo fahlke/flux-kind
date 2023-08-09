@@ -20,5 +20,5 @@ spec:
     prometheus:
       enabled: false
     grafana:
-      externalUrl: http://localhost:3000/grafana/
+      externalUrl: http://localhost:3000/
     defaultLogFormat: json
