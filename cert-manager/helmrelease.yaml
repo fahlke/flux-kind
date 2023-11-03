@@ -11,17 +11,63 @@ spec:
         kind: HelmRepository
         name: cert-manager
         namespace: cert-manager
-      version: 1.12.2
+      version: 1.13.2
   interval: 1h0m0s
-  # https://github.com/cert-manager/cert-manager/blob/v1.12.2/deploy/charts/cert-manager/values.yaml
+  # https://github.com/cert-manager/cert-manager/blob/v1.13.2/deploy/charts/cert-manager/values.yaml
   values:
     global:
       priorityClassName: system-cluster-critical
-      leaderElection:
-        namespace: cert-manager
     installCRDs: true
-    namespace: cert-manager
     prometheus:
       enabled: true
       servicemonitor:
         enabled: true
+    replicaCount: 1
+    resources:
+      requests:
+        cpu: 10m
+        memory: 32Mi
+      limits:
+        memory: 64Mi
+    topologySpreadConstraints:
+    - maxSkew: 2
+      topologyKey: topology.kubernetes.io/zone
+      whenUnsatisfiable: ScheduleAnyway
+      labelSelector:
+        matchLabels:
+          app.kubernetes.io/instance: cert-manager
+          app.kubernetes.io/component: controller
+
+    webhook:
+      replicaCount: 1
+      resources:
+        requests:
+          cpu: 10m
+          memory: 32Mi
+        limits:
+          memory: 64Mi
+      topologySpreadConstraints:
+      - maxSkew: 2
+        topologyKey: topology.kubernetes.io/zone
+        whenUnsatisfiable: ScheduleAnyway
+        labelSelector:
+          matchLabels:
+            app.kubernetes.io/instance: cert-manager
+            app.kubernetes.io/component: webhook
+
+    cainjector:
+      replicaCount: 1
+      resources:
+        requests:
+          cpu: 10m
+          memory: 32Mi
+        limits:
+          memory: 64Mi
+      topologySpreadConstraints:
+      - maxSkew: 2
+        topologyKey: topology.kubernetes.io/zone
+        whenUnsatisfiable: ScheduleAnyway
+        labelSelector:
+          matchLabels:
+            app.kubernetes.io/instance: cert-manager
+            app.kubernetes.io/component: cainjector
