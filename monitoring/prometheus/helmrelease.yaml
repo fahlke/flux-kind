@@ -11,7 +11,7 @@ spec:
         kind: HelmRepository
         name: prometheus
         namespace: prometheus
-      version: 47.1.0
+      version: 52.1.0
   interval: 1h0m0s
   install:
     crds: Create
@@ -19,7 +19,8 @@ spec:
       retries: 3
   upgrade:
     crds: CreateReplace
-  # https://github.com/prometheus-community/helm-charts/blob/kube-prometheus-stack-47.1.0/charts/kube-prometheus-stack/values.yaml
+
+  # https://github.com/prometheus-community/helm-charts/blob/kube-prometheus-stack-52.1.0/charts/kube-prometheus-stack/values.yaml
   values:
     thanosRuler:
       enabled: true
@@ -66,7 +67,9 @@ spec:
         resources:
           requests:
             cpu: 1000m
-            memory: 250Mi
+            memory: 256Mi
+          limits:
+            memory: 2048Mi
         storageSpec:
           volumeClaimTemplate:
             spec:
@@ -77,7 +80,7 @@ spec:
                   storage: 10Gi
         disableCompaction: true
         # https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#thanosspec
-        # https://github.com/prometheus-community/helm-charts/blob/kube-prometheus-stack-47.1.0/charts/kube-prometheus-stack/values.yaml#L3329
+        # https://github.com/prometheus-community/helm-charts/blob/kube-prometheus-stack-52.1.0/charts/kube-prometheus-stack/values.yaml#L3442
         thanos:
           additionalArgs:
           - name: shipper.upload-compacted
