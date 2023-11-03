@@ -44,10 +44,16 @@ flux bootstrap github \
   --token-auth
 ```
 
-
 ## Cleanup
 
 ```
 podman machine stop && \
 podman machine rm --save-image --force
+```
+
+## Optimize your pod resources with KRR
+
+```
+kubectl port-forward -n prometheus pod/prometheus-prometheus-kube-prometheus-prometheus-0 9090
+krr simple -n cert-manager -p http://127.0.0.1:9090
 ```
