@@ -1,0 +1,8 @@
+brew "fluxcd/tap/flux"
+brew "helm"
+brew "kind"
+brew "kustomize"
+brew "linkerd"
+brew "podman"
+brew "skaffold"
+brew "tilt-dev/tap/ctlptl"
