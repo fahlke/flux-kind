@@ -47,16 +47,16 @@ spec:
             - update
             - delete
             - patch
-#          - apiGroups:
-#            - batch
-#            resources:
-#            - cronjobs
-#            - jobs
-#            verbs:
-#            - create
-#            - update
-#            - delete
-#            - patch
+          - apiGroups:
+            - batch/v1
+            resources:
+            - cronjobs
+            - jobs
+            verbs:
+            - create
+            - update
+            - delete
+            - patch
 
     cleanupController:
       serviceMonitor:
