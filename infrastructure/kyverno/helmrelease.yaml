@@ -11,7 +11,7 @@ spec:
         kind: HelmRepository
         name: kyverno
         namespace: kyverno
-      version: v3.0.0
+      version: v3.0.6
   interval: 1h0m0s
   install:
     crds: Create
@@ -19,7 +19,7 @@ spec:
       retries: 3
   upgrade:
     crds: CreateReplace
-  # https://github.com/kyverno/kyverno/blob/kyverno-policies-chart-3.0.0/charts/kyverno/values.yaml
+  # https://github.com/kyverno/kyverno/blob/kyverno-policies-chart-3.0.5/charts/kyverno/values.yaml
   values:
     grafana:
       enabled: true
