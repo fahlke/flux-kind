@@ -42,11 +42,21 @@ spec:
             - ""
             resources:
             - namespaces
+            verbs:
+              - create
+              - update
+              - delete
+              - patch
           - apiGroups:
             - batch
             resources:
             - cronjobs
             - jobs
+            verbs:
+              - create
+              - update
+              - delete
+              - patch
 
     cleanupController:
       serviceMonitor:
