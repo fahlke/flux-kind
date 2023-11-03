@@ -35,28 +35,28 @@ spec:
     backgroundController:
       serviceMonitor:
         enabled: true
-      rbac:
-        clusterRole:
-          extraResources:
-          - apiGroups:
-            - ""
-            resources:
-            - namespaces
-            verbs:
-              - create
-              - update
-              - delete
-              - patch
-          - apiGroups:
-            - batch
-            resources:
-            - cronjobs
-            - jobs
-            verbs:
-              - create
-              - update
-              - delete
-              - patch
+#      rbac:
+#        clusterRole:
+#          extraResources:
+#          - apiGroups:
+#            - ""
+#            resources:
+#            - namespaces
+#            verbs:
+#            - create
+#            - update
+#            - delete
+#            - patch
+#          - apiGroups:
+#            - batch
+#            resources:
+#            - cronjobs
+#            - jobs
+#            verbs:
+#            - create
+#            - update
+#            - delete
+#            - patch
 
     cleanupController:
       serviceMonitor:
