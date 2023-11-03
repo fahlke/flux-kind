@@ -45,8 +45,8 @@ spec:
             verbs:
             - get
             - list
-            - update
             - patch
+            - update
           - apiGroups:
             - batch
             resources:
