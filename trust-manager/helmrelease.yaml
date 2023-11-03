@@ -13,6 +13,9 @@ spec:
         namespace: cert-manager
       version: v0.7.0
   interval: 1h0m0s
+  install:
+    remediation:
+      retries: 3
   # https://github.com/cert-manager/trust-manager/blob/v0.7.0/deploy/charts/trust-manager/values.yaml
   values:
     app:
