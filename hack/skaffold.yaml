@@ -3,7 +3,6 @@ kind: Config
 metadata:
   name: kind
 
-
 deploy:
   kustomize:
     paths:
@@ -13,11 +12,11 @@ deploy:
     - name: cilium
       repo: https://helm.cilium.io/
       remoteChart: cilium
-      version: 1.13.4
+      version: 1.14.3
       namespace: kube-system
       upgradeOnChange: true
       setValues:
-        # https://github.com/cilium/cilium/blob/v1.13.4/install/kubernetes/cilium/values.yaml
+        # https://github.com/cilium/cilium/blob/v1.14.3/install/kubernetes/cilium/values.yaml
         logOptions.format: json
         kubeProxyReplacement: strict
         k8sServiceHost: kind-control-plane

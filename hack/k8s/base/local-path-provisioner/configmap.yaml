@@ -1,4 +1,5 @@
-# https://github.com/rancher/local-path-provisioner/blob/v0.0.24/deploy/local-path-storage.yaml
+# This patch is required in order to disable Linkerd sidecar injection (via annotation) 
+# Src: https://github.com/rancher/local-path-provisioner/blob/v0.0.24/deploy/local-path-storage.yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
