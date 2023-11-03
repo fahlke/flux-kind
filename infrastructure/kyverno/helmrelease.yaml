@@ -48,15 +48,19 @@ spec:
             - delete
             - patch
           - apiGroups:
-            - batch/v1
+            - batch
             resources:
             - cronjobs
             - jobs
             verbs:
+            - get
             - create
+            - list
+            - patch
+            - watch
             - update
             - delete
-            - patch
+            - deletecollection
 
     cleanupController:
       serviceMonitor:
