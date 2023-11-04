@@ -22,7 +22,8 @@ spec:
   # https://github.com/prometheus-community/helm-charts/blob/prometheus-blackbox-exporter-8.4.0/charts/prometheus-blackbox-exporter/values.yaml
   values:
     serviceMonitor:
-      enabled: true
+      selfMonitor:
+        enabled: true
 
     resources:
       requests:
