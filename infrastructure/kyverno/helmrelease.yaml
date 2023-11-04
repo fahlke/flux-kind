@@ -68,3 +68,11 @@ spec:
 
     webhooksCleanup:
       enabled: true
+
+    cleanupJobs:
+      admissionReports:
+        podAnnotations:
+          linkerd.io/inject: disabled
+      clusterAdmissionReports:
+        podAnnotations:
+          linkerd.io/inject: disabled
