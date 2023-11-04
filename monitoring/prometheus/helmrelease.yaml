@@ -102,8 +102,9 @@ spec:
 
     prometheusOperator:
       admissionWebhooks:
-        annotations:
-          linkerd.io/inject: disabled
+        patch:
+          podAnnotations:
+            linkerd.io/inject: disabled
 
     grafana:
       sidecar:
