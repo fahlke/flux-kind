@@ -10,8 +10,9 @@ apiVersion: ctlptl.dev/v1alpha1
 kind: Cluster
 product: kind
 registry: ctlptl-registry
-# https://github.com/kubernetes/kubernetes/releases
-kubernetesVersion: v1.27.7
+# Kind 0.20.0 supports Kubernetes v1.27.3 by default,
+# see https://github.com/kubernetes-sigs/kind/releases/tag/v0.20.0 
+kubernetesVersion: v1.27.3
 kindV1Alpha4Cluster:
   name: kind
   networking:

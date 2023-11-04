@@ -100,6 +100,11 @@ spec:
     #    paths:
     #    - /alertmanager(/|$)(.*)
 
+    prometheusOperator:
+      admissionWebhooks:
+        annotations:
+          linkerd.io/inject: disabled
+
     grafana:
       sidecar:
         dashboards:
