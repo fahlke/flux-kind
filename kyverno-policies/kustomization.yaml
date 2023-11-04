@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
 - add-default-labels-to-all-namespaces.yaml
 - add-default-annotations-to-all-namespaces.yaml
-- add-linkerd-disable-to-jobs.yaml
+- disable-linkerd-inject-for-jobs-and-cronjobs.yaml
