@@ -15,8 +15,7 @@ spec:
   install:
     remediation:
       retries: 3
-  # Default values
-  # https://github.com/weaveworks/weave-gitops/blob/v0.9.1/charts/gitops-server/values.yaml
+  # https://github.com/weaveworks/weave-gitops/blob/v0.35.0/charts/gitops-server/values.yaml
   values:
     adminUser:
       create: true
