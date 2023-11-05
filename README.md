@@ -1,5 +1,7 @@
 # flux-kind
 
+[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
+
 ## Prerequisites
 
 Install all required tools with one command. Check out the `Brewfile` to see what will be installed/upgraded.
@@ -57,3 +59,9 @@ podman machine rm --save-image --force
 kubectl port-forward -n prometheus pod/prometheus-prometheus-kube-prometheus-prometheus-0 9090
 krr simple -n cert-manager -p http://127.0.0.1:9090
 ```
+
+## Mend Renovate
+
+Renovate scan results for [this repository](https://developer.mend.io/github/fahlke).
+
+Setup instructions: https://www.mend.io/renovate-free/
