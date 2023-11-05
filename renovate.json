@@ -8,7 +8,7 @@
     "fileMatch": ["\\.yaml$"]
   },
   "helm-values": {
-    "fileMatch": [".*"]
+    "fileMatch": ["\\.yaml$"]
   },
   "branchTopic": "{{{replace 'helmrelease-' '' packageFile}}}"
 }
