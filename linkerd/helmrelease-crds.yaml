@@ -14,5 +14,5 @@ spec:
         namespace: linkerd
       version: 1.8.0
   interval: 1h0m0s
-  # https://github.com/linkerd/linkerd2/blob/stable-2.13.5/charts/linkerd-crds/values.yaml
+  # https://github.com/linkerd/linkerd2/blob/stable-2.14.2/charts/linkerd-crds/values.yaml
   values: {}
