@@ -134,14 +134,17 @@ spec:
           format: json
 
     kube-state-metrics:
+      updateStrategy: Recreate
       replicas: 1
-      #topologySpreadConstraints:
-      #- maxSkew: 2
-      #  topologyKey: topology.kubernetes.io/zone
-      #  whenUnsatisfiable: ScheduleAnyway
-      #  labelSelector:
-      #    matchLabels:
-      #      app.kubernetes.io/instance: metrics-server
+      topologySpreadConstraints:
+      - maxSkew: 2
+        topologyKey: topology.kubernetes.io/zone
+        whenUnsatisfiable: ScheduleAnyway
+        labelSelector:
+          matchLabels:
+            app.kubernetes.io/component: metrics
+            app.kubernetes.io/instance: prometheus
+            app.kubernetes.io/name: kube-state-metrics
       resources:
         requests:
          cpu: 10m
