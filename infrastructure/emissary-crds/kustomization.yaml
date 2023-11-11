@@ -4,8 +4,9 @@ kind: Kustomization
 namespace: emissary-system
 
 # https://www.getambassador.io/docs/emissary/latest/topics/install/helm
+# https://www.getambassador.io/docs/emissary/latest/topics/install/upgrade/helm/emissary-3.7/emissary-3.X
 resources:
-- https://app.getambassador.io/yaml/emissary/3.7.0/emissary-crds.yaml
+- https://app.getambassador.io/yaml/emissary/3.8.2/emissary-crds.yaml
 
 patches:
 - path: deployment-patch.yaml
