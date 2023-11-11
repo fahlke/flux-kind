@@ -10,12 +10,12 @@ spec:
         kind: HelmRepository
         name: weave-gitops
         namespace: flux-system
-      version: 4.0.33
+      version: 4.0.34
   interval: 1m0s
   install:
     remediation:
       retries: 3
-  # https://github.com/weaveworks/weave-gitops/blob/v0.35.0/charts/gitops-server/values.yaml
+  # https://github.com/weaveworks/weave-gitops/blob/v0.36.0/charts/gitops-server/values.yaml
   values:
     adminUser:
       create: true
@@ -24,14 +24,5 @@ spec:
       passwordHash: $2a$10$C.DJIZygnXCtKj0LCJAxz.Fxt/gNqL3AhlEUFRFxNBjxg1qY82cqe
     metrics:
       enabled: true
-    ingress:
-      enabled: true
-      annotations:
-        konghq.com/preserve-host: "true"
-        konghq.com/strip-path: "true"
-      className: kong
-      hosts:
-      - host: localhost
-        paths:
-        - path: /weave/*
-          pathType: ImplementationSpecific
+    additionalArgs:
+    - --route-prefix=/weave-gitops
