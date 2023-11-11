@@ -19,7 +19,7 @@ spec:
       retries: 3
   upgrade:
     crds: CreateReplace
-  # https://github.com/kyverno/kyverno/blob/kyverno-policies-chart-3.0.5/charts/kyverno/values.yaml
+  # https://github.com/kyverno/kyverno/blob/kyverno-policies-chart-3.1.0/charts/kyverno/values.yaml
   values:
     grafana:
       enabled: true
