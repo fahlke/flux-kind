@@ -41,7 +41,8 @@ flux bootstrap github \
   --owner      "fahlke" \
   --repository "flux-kind" \
   --path       "clusters/kind-kind" \
-  --components "source-controller,kustomize-controller,helm-controller" \
+  --components 'source-controller,kustomize-controller,helm-controller,notification-controller' \
+  --components-extra 'image-reflector-controller,image-automation-controller' \
   --personal \
   --token-auth
 ```
