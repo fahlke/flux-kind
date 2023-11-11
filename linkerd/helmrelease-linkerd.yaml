@@ -14,7 +14,7 @@ spec:
         namespace: linkerd
       version: 1.16.4
   interval: 1h0m0s
-  # https://github.com/linkerd/linkerd2/blob/stable-2.14.2/charts/linkerd-control-plane/values.yaml
+  # https://github.com/linkerd/linkerd2/blob/stable-2.14.3/charts/linkerd-control-plane/values.yaml
   values:
     controllerLogFormat: json
     priorityClassName: system-cluster-critical
@@ -31,4 +31,4 @@ spec:
     podMonitor:
       enabled: true
     # By default, some namespaces are excluded.
-    # See: https://github.com/linkerd/linkerd2/blob/stable-2.14.2/charts/linkerd-control-plane/values.yaml#L357
+    # See: https://github.com/linkerd/linkerd2/blob/stable-2.14.3/charts/linkerd-control-plane/values.yaml#L359
