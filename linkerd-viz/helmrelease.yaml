@@ -14,7 +14,7 @@ spec:
         namespace: linkerd
       version: 30.12.4
   interval: 1h0m0s
-  # https://github.com/linkerd/linkerd2/blob/stable-2.14.2/viz/charts/linkerd-viz/values.yaml
+  # https://github.com/linkerd/linkerd2/blob/stable-2.14.3/viz/charts/linkerd-viz/values.yaml
   values:
     prometheusUrl: http://prometheus-kube-prometheus-prometheus.prometheus.svc.cluster.local:9090
     prometheus:
