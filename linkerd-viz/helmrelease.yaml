@@ -12,7 +12,7 @@ spec:
         kind: HelmRepository
         name: linkerd
         namespace: linkerd
-      version: 30.12.4
+      version: 30.12.11
   interval: 1h0m0s
   # https://github.com/linkerd/linkerd2/blob/stable-2.14.3/viz/charts/linkerd-viz/values.yaml
   values:
