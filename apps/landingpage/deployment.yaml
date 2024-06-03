@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: landingpage
-        image: caddy:2.7.5-alpine
+        image: caddy:2.8.4-alpine
         resources:
           requests:
             memory: "16Mi"
