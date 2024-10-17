@@ -11,7 +11,7 @@ spec:
         kind: HelmRepository
         name: keda
         namespace: keda
-      version: 2.12.0
+      version: 2.15.2
   interval: 1h0m0s
   install:
     crds: Create
